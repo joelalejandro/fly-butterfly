@@ -2,139 +2,21 @@
 <html>
     <head>
         <title>Fly, Butterfly!</title>
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-
-            html, body {
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                width: 100%;
-                height: 100%;
-                background: #000;
-            }
-
-            #game {
-                clip-path: inset(-1px);
-                width: 160px;
-                height: 320px;
-                border: 1px solid black;
-                outline: 1px solid white;
-                position: absolute;
-                cursor: none;
-                z-index: 1;
-                background: url(./assets/Surface1.png);
-                left: 50%;
-                top: 50%;
-                margin-left: -80px;
-                margin-top: -160px;
-                user-select: none;
-                animation: 300s scroll infinite linear;
-            }
-
-            #player {
-                position: absolute;
-                left: 50%;
-                bottom: 25%;
-                z-index: 10;
-            }
-
-            .spawn {
-                position: absolute;
-                top: -32px;
-                animation: 10s spawn linear;
-            }
-
-            #score {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                z-index: 20;
-                font: bold 10px monospace;
-                color: #fff;
-                filter: drop-shadow(1px 1px 0px #000);
-                letter-spacing: 2px;
-            }
-
-            #score:before {
-                content: "Score";
-                text-transform: uppercase;
-                display: block;
-                font: bold 8px monospace;
-                color: #fff;
-                letter-spacing: 0;
-            }
-
-            #life {
-                position: absolute;
-                top: 10px;
-                right: 8px;
-                z-index: 20;
-                filter: drop-shadow(1px 1px 0px #000);
-                -webkit-appearance: none;
-                appearance: none;
-                width: 50px;
-                height: 10px;
-            }
-
-            #life::-webkit-progress-value {
-                background: #d3167c;
-            }
-
-            #life:before {
-                content: "Life";
-                text-transform: uppercase;
-                display: block;
-                font: bold 8px monospace;
-                color: #fff;
-                text-align: right;
-            }
-
-            #gameover {
-                background: rgba(0,0,0,0.5);
-                color: #fff;
-                position: absolute;
-                font: 12px monospace;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                padding: 10px;
-                width: 100%;
-                height: 100%;
-            }
-
-            #gameover button {
-                background: #d3167c;
-                border: 1px solid black;
-                font: bold 12px monospace;
-                color: #fff;
-            }
-
-            #gameover span {
-                display: block;
-                font-size: 30px;
-            }
-
-            @keyframes scroll {
-                100% {
-                    background-position: 0 10000px;
-                }
-            }
-
-            @keyframes spawn {
-                100% {
-                    top: 320px;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="game/ui.css">
+        <base target="_blank">
     </head>
     <body>
         <main id="game">
             <img src="assets/Butterfly.gif" id="player">
         </main>
+
+        <footer>
+            Game and visual assets made by <a href="https://twitter.com/joelalejandro">@joelalejandro</a> | <a href="https://github.com/joelalejandro/fly-butterfly">Check out the source code on GitHub</a><br>
+
+            “Pixel adventures” | Music by <a href="http://www.marcelofernandezmusic.com">Marcelo Fernandez</a> (<a href="http://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>).
+        </footer>
+
+        <audio loop autoplay src="assets/PixelAdventures.mp3"></audio>
 
         <script src="game/engine/Utils.js"></script>
         <script src="game/engine/GameElement.js"></script>
